@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>{{ page.title }}</title>
+		<title>{% if page.title %}{{ page.title }} ┈ {% endif %}{{ site.name }}</title>
 		<meta name="viewport" content="width=device-width" />
 		
 		<!-- syntax highlighting CSS -->
@@ -26,8 +26,7 @@
 			
 			<div class="footer">
 				<div class="contact">
-					<p>
-					{{ site.author }} (aka Adm.Wiggin)
+					♥, {{ site.author }} (aka Adm.Wiggin)
 					<br />
 					IRC: "tianon" on both
 					<a href="https://freenode.net/">Freenode</a>
