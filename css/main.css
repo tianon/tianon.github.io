@@ -104,7 +104,10 @@ a:visited { color: #a0a; }
 
 .footer .contact {
 	float: left;
-	margin-right: 3em;
+	padding: 1em 0;
+}
+.footer .contact.right {
+	float: right;
 }
 
 .footer .contact a {
