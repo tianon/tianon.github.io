@@ -1,7 +1,7 @@
 name: Tianon's Ramblings ✿
 permalink: /post/:year/:month/:day/:title.html
 
-markdown: redcarpet
+markdown: kramdown
 
 # let me use future dates as lazy drafts :)
 future: false
