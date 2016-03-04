@@ -3,7 +3,7 @@ layout: post
 title:  Docker on VULTR + IPv6
 ---
 
-I've been using [VULTR](https://www.vultr.com) for a little while now and have been generally very pleased (especially with the very recent facelift the management portal received).  I don't want to waste too much time talking about it, but the "killer feature" for me (over some of their competitors like [DigitalOcean](https://www.digitalocean.com) is that I can provide a raw ISO and provision my VM directly using it as I would any local VM (which also means that once my VM is up and working, I get to use the OS's standard kernel, which is especially important for using Debian Unstable well).
+I've been using [VULTR](https://www.vultr.com) for a little while now and have been generally very pleased (especially with the very recent facelift the management portal received).  I don't want to waste too much time talking about it, but the "killer feature" for me (over some of their competitors like [DigitalOcean](https://www.digitalocean.com)) is that I can provide a raw ISO and provision my VM directly using it as I would any local VM (which also means that once my VM is up and working, I get to use the OS's standard kernel, which is especially important for using Debian Unstable well).
 
 Anyhow, already too much about that -- let's get to the cool stuff.
 
