@@ -22,8 +22,9 @@ The relevant documentation which helped me get to the working state outlined bel
 The first step I took was creating a systemd drop-in file so that I could modify the daemon startup parameters (to include `--ipv6` and `--fixed-cidr-v6`):
 
 ```ini
-# /etc/systemd/system/docker.service
+# /etc/systemd/system/docker.service.d/ipv6.conf
 [Service]
+ExecStart=
 ExecStart=/usr/bin/docker daemon -H fd:// --ipv6 --fixed-cidr-v6 2001:db8::/80
 ```
 
@@ -50,3 +51,5 @@ proxy ens3 {
 After getting this configuration in place and restarting `ndppd` (`systemctl restart ndppd`), magic happened.  My containers could `ping6 google.com`, and my other IPv6 hosts could `ping6` the IPv6 addresses of my individual containers!
 
 You've probably noted that this configuration isn't exactly secure, since it means that each of my individual containers has a _publicly_ routable IPv6 address, but for this specific use case, I'm OK with that! 🍦
+
+**Update** (2015-03-09): thanks to Алексей Шилин for correcting my systemd drop-in file usage! ♥
