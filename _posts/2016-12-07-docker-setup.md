@@ -16,7 +16,8 @@ The way I do this is probably a bit unconventional, but the basic gist is someth
 ```bash
 export GNUPGHOME="$(mktemp -d)"
 gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-gpg --export --armor 58118E89F3A912897C070ADBF76221572C52609D | sudo tee /etc/apt/trusted.gpg.d/docker.gpg.asc
+gpg --export --armor 58118E89F3A912897C070ADBF76221572C52609D \
+	| sudo tee /etc/apt/trusted.gpg.d/docker.gpg.asc
 rm -rf "$GNUPGHOME"
 ```
 
@@ -27,7 +28,9 @@ This creates me a new GnuPG directory to work with (so my personal `~/.gnupg` do
 For completeness, other popular ways to fetch this include:
 
 ```bash
-sudo apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo apt-key adv \
+	--keyserver ha.pool.sks-keyservers.net \
+	--recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 ```
 
 (worth noting that `man apt-key` discourages the use of `apt-key adv`)
@@ -58,7 +61,8 @@ uid           [ unknown] Docker Release Tool (releasedocker) <docker@docker.com>
 If you prefer to fetch sources via HTTPS, install `apt-transport-https`, but I'm personally fine with simply doing GPG verification of fetched packages, so I forgo that in favor of less packages installed.  YMMV.
 
 ```bash
-echo 'deb http://apt.dockerproject.org/repo debian-stretch main' | sudo tee /etc/apt/sources.list.d/docker.list
+echo 'deb http://apt.dockerproject.org/repo debian-stretch main' \
+	| sudo tee /etc/apt/sources.list.d/docker.list
 ```
 
 Hopefully it's obvious, but `debian-stretch` in that line should be replaced by `debian-jessie`, `ubuntu-xenial`, etc. as desired.  It's also worth pointing out that this will _not_ include Docker's release candidates.  If you want those as well, add `testing` after `main`, ie `... debian-stretch main testing' | ...`.
@@ -107,13 +111,7 @@ I usually set a few boot parameters as well (in `/etc/default/grub`'s `GRUB_CMDL
 - `systemd.legacy_systemd_cgroup_controller=yes` -- newer versions of systemd _may_ disable the legacy cgroup interfaces Docker currently uses; this instructs systemd to keep those enabled (for more details, see [systemd/systemd#4628](https://github.com/systemd/systemd/pull/4628), [opencontainers/runc#1175](https://github.com/opencontainers/runc/issues/1175), [docker/docker#28109](https://github.com/docker/docker/issues/28109))
 - `vsyscall=emulate` -- allow older binaries to run (`debian:wheezy`, etc.; see [docker/docker#28705](https://github.com/docker/docker/issues/28705))
 
-All together:
-
-```sh
-...
-GRUB_CMDLINE_LINUX_DEFAULT="cgroup_enable=memory swapaccount=1 systemd.legacy_systemd_cgroup_controller=yes vsyscall=emulate"
-...
-```
+All together: `GRUB_CMDLINE_LINUX_DEFAULT="cgroup_enable=memory swapaccount=1 systemd.legacy_systemd_cgroup_controller=yes vsyscall=emulate"`
 
 # install Docker!
 
