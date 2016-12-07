@@ -57,9 +57,9 @@ a:visited { color: #a0a; }
 
 .site {
 	font-size: 115%;
-	text-align: justify;
-	width: 42em;
-	margin: 3em auto 2em;
+	text-align: left;
+	min-width: 42em;
+	padding: 3em 2em;
 	line-height: 1.5em;
 }
 
@@ -135,6 +135,7 @@ a:visited { color: #a0a; }
 	border: 1px solid #ddd;
 	/* background-color: #eef; */
 	padding: 0 .4em;
+	overflow: auto;
 }
 
 .post ul, .post ol {
