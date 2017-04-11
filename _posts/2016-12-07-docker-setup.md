@@ -17,6 +17,7 @@ The way I do this is probably a bit unconventional, but the basic gist is someth
 export GNUPGHOME="$(mktemp -d)"
 gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 gpg --export --armor 58118E89F3A912897C070ADBF76221572C52609D | sudo tee /etc/apt/trusted.gpg.d/docker.gpg.asc
+# gpg --export 58118E89F3A912897C070ADBF76221572C52609D | sudo tee /etc/apt/trusted.gpg.d/docker.gpg > /dev/null
 rm -rf "$GNUPGHOME"
 ```
 
@@ -146,3 +147,5 @@ $ sudo usermod -aG docker "$(id -un)"
 (Reboot or logout/login to update your session to include `docker` group membership and thus no longer require `sudo` for using `docker` commands.)
 
 Hope this is useful to someone!  If nothing else, it'll serve as a concise single-page reference for future-tianon. 😇
+
+- **Updated 2017-04-11**: adjusted some commands to be easier to munge for other platforms (especially so I stop screwing up the `gpg --export` line and getting garbage to my terminal)
