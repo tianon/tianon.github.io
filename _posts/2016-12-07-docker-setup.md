@@ -95,7 +95,8 @@ Choosing an appropriate storage driver is a fairly complex topic, and I'd recomm
 
 ```json
 {
-	"storage-driver": "overlay2"
+	"storage-driver": "overlay2",
+	"no-new-privileges": true
 }
 ```
 
@@ -149,3 +150,4 @@ $ sudo usermod -aG docker "$(id -un)"
 Hope this is useful to someone!  If nothing else, it'll serve as a concise single-page reference for future-tianon. 😇
 
 - **Updated 2017-04-11**: adjusted some commands to be easier to munge for other platforms (especially so I stop screwing up the `gpg --export` line and getting garbage to my terminal)
+- **Updated 2017-05-01**: added `no-new-privileges` to my example `daemon.json`! (see [d7fda01](https://github.com/moby/moby/commit/d7fda019bb7e24f42f8ae1ddecb3fd52df3c48bf)/[#29984](https://github.com/docker/docker/pull/29984))
