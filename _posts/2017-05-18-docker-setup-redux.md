@@ -3,7 +3,7 @@ layout: post
 title:  My Docker Install Process (redux)
 ---
 
-Since I wrote [my first post on this topic](/post/2016/12/07/docker-setup.html), Docker has switched from https://apt.dockerproject.org/repo to https://download.docker.com/linux/debian, so this post revisits my original steps, but tailored for the new repo.
+Since I wrote [my first post on this topic](/post/2016/12/07/docker-setup.html), Docker has switched from [apt.dockerproject.org](https://apt.dockerproject.org/repo) to [download.docker.com](https://download.docker.com/linux/debian), so this post revisits my original steps, but tailored for the new repo.
 
 There will be less commentary this time (straight to the beef).  For further commentary on "why" for any step, see my previous post.
 
