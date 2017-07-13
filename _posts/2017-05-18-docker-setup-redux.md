@@ -53,7 +53,7 @@ $ apt-get update && apt-get install apt-transport-https
 Setup `sources.list`:
 
 ```bash
-echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" | sudo tee /etc/apt/sources.list.d/docker.list
+echo "deb [ arch=amd64 ] https://download.docker.com/linux/debian stretch stable" | sudo tee /etc/apt/sources.list.d/docker.list
 ```
 
 Add `edge` component for every-month releases and `test` for release candidates (ie, `... stretch stable edge`).
