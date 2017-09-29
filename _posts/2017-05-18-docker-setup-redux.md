@@ -26,6 +26,8 @@ gpg --export --armor 9DC858229FC7DD38854AE2D88D81803C0EBFCD88 | sudo tee /etc/ap
 rm -rf "$GNUPGHOME"
 ```
 
+(**Update 2017-09-29:** If you're installing EE, the key changes to `DD911E995A64A202E85907D6BC14F10B6D085F96`.)
+
 Verify:
 
 ```console
@@ -58,6 +60,8 @@ echo "deb [ arch=amd64 ] https://download.docker.com/linux/debian stretch stable
 
 Add `edge` component for every-month releases and `test` for release candidates (ie, `... stretch stable edge`).
 Replace `stretch` with `jessie` for Jessie installs.
+
+(**Update 2017-09-29:** If you're installing EE, replace `https://download.docker.com/linux/debian` with your `<DOCKER-EE-SUBSCRIPTION-URL>/ubuntu` and use an Ubuntu suite like `xenial` which matches your host.)
 
 At this point, you should be safe to run `apt-get update` to verify the changes:
 
@@ -141,3 +145,5 @@ Server:
 
 $ sudo usermod -aG docker "$(id -un)"
 ```
+
+(**Update 2017-09-29:** If you're installing EE, the package changes to `docker-ee`.)
