@@ -11,15 +11,15 @@ The first step I take is to write the naïve version of the `Dockerfile`: downlo
 
 The error message will usually take the form of something like `error: could not find "xyz.h"` or `error: libxyz development headers not found`.
 
-If I'm building in Debian, I'll hit "https://packages.debian.org/file:xyz.h" (replacing "xyz.h" with the name of the header file from the error message), or even just Google something like "xyz.h debian", to figure out the name of the package I require.
+If I'm building in Debian, I'll hit `https://packages.debian.org/file:xyz.h` (replacing "xyz.h" with the name of the header file from the error message), or even just Google something like "xyz.h debian", to figure out the name of the package I require.
 
-If I'm building in Alpine, I'll use "https://pkgs.alpinelinux.org/contents" to perform a similar search.
+If I'm building in Alpine, I'll use [https://pkgs.alpinelinux.org/contents](https://pkgs.alpinelinux.org/contents) to perform a similar search.
 
 The same works to some extent for "libxyz development headers", but in my experience Google works better for those since different distributions and projects will call these development packages by different names, so sometimes it's a little harder to figure out exactly which one is the "right" one to install.
 
 Once I've got a package name, I add that package name to my `Dockerfile`, rinse, and repeat.  Eventually, this usually leads to a successful build.  Occationally I find that some library either isn't in Debian or Alpine, or isn't new enough, and I've also got to build it from source, but those instances are rare in my own experience -- YMMV.
 
-I'll also often check the source for the Debian (via https://sources.debian.org) or Alpine (via https://git.alpinelinux.org/cgit/aports/tree) package of the software I'm looking to compile, especially paying attention to `Build-Depends` (ala https://sources.debian.org/src/php7.0/7.0.26-1/debian/control/) and/or `makedepends` (ala https://git.alpinelinux.org/cgit/aports/tree/community/php7/APKBUILD?id=d0ca197f031f96d4664cafaa618aeccf94640a1e) for package name clues.
+I'll also often check the source for the Debian (via [https://sources.debian.org](https://sources.debian.org)) or Alpine (via [https://git.alpinelinux.org/cgit/aports/tree](https://git.alpinelinux.org/cgit/aports/tree)) package of the software I'm looking to compile, especially paying attention to `Build-Depends` (ala [`php7.0=7.0.26-1`'s `debian/control` file](https://sources.debian.org/src/php7.0/7.0.26-1/debian/control/)) and/or `makedepends` (ala [`php7`'s `APKBUILD` file](https://git.alpinelinux.org/cgit/aports/tree/community/php7/APKBUILD?id=d0ca197f031f96d4664cafaa618aeccf94640a1e)) for package name clues.
 
 Personally, I find this sort of detective work interesting and rewarding, but I realize I'm probably a bit of a unique creature.  Another good technique I use occationally is to determine whether anyone else has already Dockerized the thing I'm trying to, so I can simply learn directly from their `Dockerfile` which packages I'll need to install.
 
