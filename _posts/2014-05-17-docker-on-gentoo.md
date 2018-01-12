@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Love is a Battlefield
+title:  Love is a Battlefield (Docker on Gentoo)
 ---
 
 Docker on Gentoo can be a beautiful thing, but it can also be a challenge
