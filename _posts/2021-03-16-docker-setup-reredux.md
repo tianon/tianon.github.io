@@ -43,7 +43,7 @@ sudo vim /etc/apt/preferences.d/docker.pref
 ```
 
 ```http
-Package: *aufs* *rootless* cgroupfs-mount
+Package: *aufs* *rootless* cgroupfs-mount docker-*-plugin
 Pin: version *
 Pin-Priority: -10
 
