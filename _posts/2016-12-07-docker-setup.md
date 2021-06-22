@@ -15,7 +15,7 @@ The way I do this is probably a bit unconventional, but the basic gist is someth
 
 ```bash
 export GNUPGHOME="$(mktemp -d)"
-gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+gpg --keyserver keyserver.ubuntu.com --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 gpg --export --armor 58118E89F3A912897C070ADBF76221572C52609D | sudo tee /etc/apt/trusted.gpg.d/docker.gpg.asc
 # gpg --export 58118E89F3A912897C070ADBF76221572C52609D | sudo tee /etc/apt/trusted.gpg.d/docker.gpg > /dev/null
 rm -rf "$GNUPGHOME"
@@ -28,7 +28,7 @@ This creates me a new GnuPG directory to work with (so my personal `~/.gnupg` do
 For completeness, other popular ways to fetch this include:
 
 ```bash
-sudo apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 ```
 
 (worth noting that `man apt-key` discourages the use of `apt-key adv`)

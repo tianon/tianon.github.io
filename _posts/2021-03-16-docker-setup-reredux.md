@@ -9,7 +9,7 @@ See ["My Docker Install Process"](/post/2016/12/07/docker-setup.html) and ["My D
 
 ```bash
 GNUPGHOME="$(mktemp -d)"; export GNUPGHOME
-gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+gpg --keyserver keyserver.ubuntu.com --recv-keys 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
 sudo mkdir -p /etc/apt/tianon.gpg.d
 gpg --export --armor 9DC858229FC7DD38854AE2D88D81803C0EBFCD88 | sudo tee /etc/apt/tianon.gpg.d/docker.gpg.asc
 rm -rf "$GNUPGHOME"

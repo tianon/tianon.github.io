@@ -15,7 +15,7 @@ There will be less commentary this time (straight to the beef).  For further com
 # "Docker Release (CE deb)"
 
 export GNUPGHOME="$(mktemp -d)"
-gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+gpg --keyserver keyserver.ubuntu.com --recv-keys 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
 
 # stretch+
 gpg --export --armor 9DC858229FC7DD38854AE2D88D81803C0EBFCD88 | sudo tee /etc/apt/trusted.gpg.d/docker.gpg.asc
