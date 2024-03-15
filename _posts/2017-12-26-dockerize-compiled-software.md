@@ -3,7 +3,7 @@ layout: post
 title:  Dockerizing Compiled Software
 ---
 
-I recently went through a stint of closing a *huge* number of issues in the [docker-library/php](https://github.com/docker-library/php) repository, and one of the oldest (and longest) discussions was related to installing depedencies for a compiling extensions, and I wrote a [semi-long comment](https://github.com/docker-library/php/issues/75#issuecomment-353673374) explaining how I do this in a general way for any software I wish to Dockerize.
+I recently went through a stint of closing a *huge* number of issues in the [docker-library/php](https://github.com/docker-library/php) repository, and one of the oldest (and longest) discussions was related to installing dependencies for a compiling extensions, and I wrote a [semi-long comment](https://github.com/docker-library/php/issues/75#issuecomment-353673374) explaining how I do this in a general way for any software I wish to Dockerize.
 
 I'm going to copy most of that comment here and perhaps expand a little bit more in order to have a better/cleaner place to link to!
 
@@ -17,11 +17,11 @@ If I'm building in Alpine, I'll use [https://pkgs.alpinelinux.org/contents](http
 
 The same works to some extent for "libxyz development headers", but in my experience Google works better for those since different distributions and projects will call these development packages by different names, so sometimes it's a little harder to figure out exactly which one is the "right" one to install.
 
-Once I've got a package name, I add that package name to my `Dockerfile`, rinse, and repeat.  Eventually, this usually leads to a successful build.  Occationally I find that some library either isn't in Debian or Alpine, or isn't new enough, and I've also got to build it from source, but those instances are rare in my own experience -- YMMV.
+Once I've got a package name, I add that package name to my `Dockerfile`, rinse, and repeat.  Eventually, this usually leads to a successful build.  Occasionally I find that some library either isn't in Debian or Alpine, or isn't new enough, and I've also got to build it from source, but those instances are rare in my own experience -- YMMV.
 
 I'll also often check the source for the Debian (via [https://sources.debian.org](https://sources.debian.org)) or Alpine (via [https://git.alpinelinux.org/cgit/aports/tree](https://git.alpinelinux.org/cgit/aports/tree)) package of the software I'm looking to compile, especially paying attention to `Build-Depends` (ala [`php7.0=7.0.26-1`'s `debian/control` file](https://sources.debian.org/src/php7.0/7.0.26-1/debian/control/)) and/or `makedepends` (ala [`php7`'s `APKBUILD` file](https://git.alpinelinux.org/cgit/aports/tree/community/php7/APKBUILD?id=d0ca197f031f96d4664cafaa618aeccf94640a1e)) for package name clues.
 
-Personally, I find this sort of detective work interesting and rewarding, but I realize I'm probably a bit of a unique creature.  Another good technique I use occationally is to determine whether anyone else has already Dockerized the thing I'm trying to, so I can simply learn directly from their `Dockerfile` which packages I'll need to install.
+Personally, I find this sort of detective work interesting and rewarding, but I realize I'm probably a bit of a unique creature.  Another good technique I use occasionally is to determine whether anyone else has already Dockerized the thing I'm trying to, so I can simply learn directly from their `Dockerfile` which packages I'll need to install.
 
 For the specific case of PHP extensions, there's almost always someone who's already figured out what's necessary for this or that module, and all I have to do is some light detective work to find them.
 
