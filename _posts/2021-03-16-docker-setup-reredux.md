@@ -42,7 +42,7 @@ echo 'path-exclude /usr/libexec/docker/cli-plugins/*' | sudo tee /etc/dpkg/dpkg.
 sudo vim /etc/apt/preferences.d/docker.pref
 ```
 
-```http
+```yaml
 Package: *aufs* *rootless* cgroupfs-mount docker-*-plugin
 Pin: version *
 Pin-Priority: -10
