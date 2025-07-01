@@ -8,12 +8,12 @@ future: false
 
 # let's be explicit
 encoding: utf-8
-timezone: America/Denver
+timezone: America/Los_Angeles
 
 # some useful values within the site
 author: Tianon Gravi
 email: admwiggin@gmail.com
-uri: https://tianon.github.io
+uri: https://tianon.xyz
 
 # stuff github-pages overrides anyhow, so let's be consistent
 # see also https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll
