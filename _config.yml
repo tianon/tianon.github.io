@@ -3,19 +3,19 @@
 name: Tianon's Ramblings ✿
 permalink: /post/:year/:month/:day/:title.html
 
-markdown: kramdown
+# some useful values within the site
+author: Tianon Gravi
+email: admwiggin@gmail.com
+uri: https://ram.tianon.xyz
+# TODO should this use the standard "url" value instead? 🤔
 
 # let me use future dates as lazy drafts :)
 future: false
 
 # let's be explicit
+markdown: kramdown
 encoding: utf-8
 timezone: America/Los_Angeles
-
-# some useful values within the site
-author: Tianon Gravi
-email: admwiggin@gmail.com
-uri: https://ram.tianon.xyz
 
 # stuff github-pages overrides anyhow, so let's be consistent
 # see https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site
