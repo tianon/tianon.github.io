@@ -1,12 +1,12 @@
 ---
-layout: home
+layout: default
 title: Speaking Engagements
 ---
 
 <ul class="posts">
 	{% for speaker in site.data.speaker %}
 	<li>
-		<span>{{ speaker.date }}</span>
+		<span class="date">{{ speaker.date | date_to_string }}</span>
 		&raquo;
 		{{ speaker.place }}
 		&raquo;

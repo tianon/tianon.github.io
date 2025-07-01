@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -9,7 +9,8 @@
 		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 		
 		<!-- syntax highlighting CSS -->
-		<link rel="stylesheet" href="/css/syntax-perldoc.css" />
+		<link rel="stylesheet" href="/css/syntax-monokai.css" media="(prefers-color-scheme: dark)" />
+		<link rel="stylesheet" href="/css/syntax-perldoc.css" media="(prefers-color-scheme: light)" />
 		
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="/css/main.css" />
@@ -21,20 +22,41 @@
 		<div class="site">
 			<div class="header">
 				<a style="float: right;" href="/">
-					<img src="https://secure.gravatar.com/avatar/e9917c00ce99aa2b0ecb82e942d01a09.jpg?s=100" height="100" width="100" alt="" />
+					<img src="/logo-100.png" height="100" width="100" alt="personal logo" title="tianon" />
 				</a>
-				<span class="title"><a href="/">{{ site.name }}</a></span>
+				<a class="title" href="/">{{ site.name }}</a>
 				<a class="extra" href="/">home</a>
 				<a class="extra" href="/speaker.html">public speaking</a>
+				<!-- disabled (for now?) because I gotta figure out how to load the syntax css conditionally in a clean way
+				<fieldset class="extra">
+					<label>
+						<input type="radio" name="color-scheme" id="color-scheme-light" value="0">
+						Light
+					</label>
+					<label>
+						<input type="radio" name="color-scheme" value="auto" checked>
+						Auto
+					</label>
+					<label>
+						<input type="radio" name="color-scheme" id="color-scheme-dark" value="1">
+						Dark
+					</label>
+					<!-- wouldn't it be nice if this setting could persist?  alas, no javascript (yet) -- >
+				</fieldset>
+				-->
 			</div>
-			
+
+			{% if page.title %}
+			<h1>{{ page.title }}</h1>
+			{% endif %}
+
 			{{ content }}
-			
+
 			<div class="footer">
 				<div class="contact">
-					♥, {{ site.author }} (aka Adm.Wiggin)
+					❤️, {{ site.author }} (aka Adm.Wiggin)
 					<br />
-					IRC: "tianon" on both
+					IRC: "<code>tianon</code>" on both
 					<a href="https://libera.chat/">Libera.Chat</a>
 					and
 					<a href="https://www.oftc.net/">OFTC</a>
@@ -42,11 +64,13 @@
 					<a href="https://libraryofbabel.info/bookmark.cgi?tianon">Library of Babel</a>
 					|
 					<a href="https://www.docker.com/blog/docker-acquires-long-time-partner-infosiftr/">Docker</a>
-					<br />
+					/
 					<a href="https://jobs.ashbyhq.com/docker?utm_source=GNmNL632rA">Work with me? 👀</a>
 				</div>
 				<div class="contact right">
 					<a href="https://github.com/tianon">github.com/tianon</a>
+					|
+					<a href="https://hub.docker.com/u/tianon">docker.io/tianon</a>
 					|
 					<a href="https://bsky.app/profile/tianon.bsky.social">tianon.bsky.social</a>
 					<br />

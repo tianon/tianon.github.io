@@ -12,6 +12,12 @@ uri: https://ram.tianon.xyz
 # let me use future dates as lazy drafts :)
 future: false
 
+# https://kramdown.gettalong.org/rdoc/Kramdown/Options.html
+kramdown:
+  # disable "smart" quotes 🤬
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+# (note the bits GitHub enforces below)
+
 # let's be explicit
 markdown: kramdown
 encoding: utf-8
@@ -24,6 +30,6 @@ highlighter: rouge
 safe: true
 gist:
   noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+#kramdown:
+#  math_engine: mathjax
+#  syntax_highlighter: rouge

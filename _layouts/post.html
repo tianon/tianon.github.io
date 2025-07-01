@@ -2,9 +2,8 @@
 layout: default
 ---
 
-<h2>{{ page.title }}</h2>
 <p class="meta">{{ page.date | date_to_string }}</p>
 
 <div class="post">
-	{{ content | replace: '<h6', '<span' | replace: '<h5', '<span' | replace: '<h4', '<h6' | replace: '<h3', '<h5' | replace: '<h2', '<h4' | replace: '<h1', '<h3' }}
+	{{ content | replace: '<h6', '<div' | replace: '<h5', '<h6' | replace: '<h4', '<h5' | replace: '<h3', '<h4' | replace: '<h2', '<h3' | replace: '<h1', '<h2' }}
 </div>
