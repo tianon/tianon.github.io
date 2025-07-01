@@ -26,7 +26,7 @@ Engine so you can play with it freely inside your browser.
 [sh/tagwords.hy](https://github.com/hylang/hy/blob/master/eg/sh/tagwords.hy):
 
 {% comment %} TODO replace this "lisp" with "hylang" when pygments finally has a release {% endcomment %}
-```lisp
+```hylang
 ;; python-sh from hy
 
 (import [sh [cat grep]])
