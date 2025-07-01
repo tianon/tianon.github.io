@@ -1,18 +1,16 @@
 ---
-layout: default
+layout: home
+title: Speaking Engagements
 ---
 
-<div id="home">
-	<h1>Speaking Engagements</h1>
-	<ul class="posts">
-		{% for speaker in site.data.speaker %}
-		<li>
-			<span>{{ speaker.date }}</span>
-			&raquo;
-			{{ speaker.place }}
-			&raquo;
-			{% if speaker.url %}<a href="{{ speaker.url }}">{% endif %}{{ speaker.title }}{% if speaker.url %}</a>{% endif %}
-		</li>
-		{% endfor %}
-	</ul>
-</div>
+<ul class="posts">
+	{% for speaker in site.data.speaker %}
+	<li>
+		<span>{{ speaker.date }}</span>
+		&raquo;
+		{{ speaker.place }}
+		&raquo;
+		{% if speaker.url %}<a href="{{ speaker.url }}">{% endif %}{{ speaker.title }}{% if speaker.url %}</a>{% endif %}
+	</li>
+	{% endfor %}
+</ul>
