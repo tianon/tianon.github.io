@@ -1,0 +1,33 @@
+- date:  '2019-04-30'
+  place: 'The New Stack Interview @ DockerCon 2019'
+  title: 'Container Security, Unverified Images, and Docker Vulnerabilities'
+  url:   'https://youtu.be/MZMGIVjKBew'
+
+- date:  '2016-10-18'
+  place: 'BrightTALK Webinar'
+  title: 'Docker: Volume Drivers, Storage, and You'
+  url:   'https://www.brighttalk.com/webcast/8609/219711'
+
+- date:  '2016-05-03'
+  place: 'Container Summit 2016 (LV)'
+  title: "Docker Do's and Don'ts"
+  url:   'https://containersummit.io/events/vegas-2016/videos/docker-dos-and-donts'
+
+- date:  '2016-02-10'
+  place: 'Container Summit 2016 (NYC)'
+  title: "The Evolving Container Ecosystem: What's Next?"
+  url:   'http://containersummit.io/events/nyc-2016/videos/the-evolving-container-ecosystem'
+
+- date:  '2015-09-22'
+  place: 'Container Summit 2015 (SF)'
+  title: 'The Future of Containers in Production'
+  url:   'http://containersummit.io/events/sf-2015/videos/the-future-of-containers-in-production'
+
+- date:  '2015-04-08'
+  place: 'Container Summit 2015 (NYC)'
+  title: 'Panel (non-recorded)'
+
+- date:  '2014-06-10'
+  place: 'DockerCon 14'
+  title: 'Contributing to Docker'
+  url:   'https://youtu.be/1jwo8-1HYYg'
