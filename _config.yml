@@ -1,3 +1,5 @@
+# https://jekyllrb.com/docs/configuration/
+
 name: Tianon's Ramblings ✿
 permalink: /post/:year/:month/:day/:title.html
 
@@ -16,7 +18,12 @@ email: admwiggin@gmail.com
 uri: https://ram.tianon.xyz
 
 # stuff github-pages overrides anyhow, so let's be consistent
-# see also https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll
+# see https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site
 lsi: false
 highlighter: rouge
 safe: true
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
