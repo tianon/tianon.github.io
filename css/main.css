@@ -145,16 +145,16 @@ a:visited { color: #a0a; }
 }
 
 .post code {
+	/* inline code */
 	border: 1px solid #ddd;
 	padding: 0 .2em;
 	background-color: #eee;
 }
 .post pre code {
-	background-color: inherit;
-}
-
-.post pre code {
+	/* code blocks */
 	border: none;
+	padding: 0;
+	background-color: inherit;
 }
 
 /* terminal */
