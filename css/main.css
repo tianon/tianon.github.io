@@ -61,8 +61,8 @@ h2, h3, h4, h5, h6 { margin-top: 0.5em; margin-bottom: 0.2em; }
 p { margin: 1em 0; }
 
 a         { color: color-mix(in srgb, var(--text-color), var(--background-color) 50%); }
-a:hover   { color: color-mix(in srgb, var(--text-color), var(--background-color) 20%); }
-a:visited { color: #a0a; }
+a:hover   { color: color-mix(in srgb, var(--text-color), var(--background-color) 20%) !important; }
+a:visited { color: color-mix(in srgb, var(--text-color), var(--background-color) 30%); }
 
 /* home page(s) */
 .posts {
