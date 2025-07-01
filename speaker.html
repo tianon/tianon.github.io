@@ -4,14 +4,14 @@ layout: default
 
 <div id="home">
 	<h1>Speaking Engagements</h1>
-	<ul class="posts">
-		{% for post in site.data.speaking %}
+	<ul class="speakers">
+		{% for speaker in site.data.speaker %}
 		<li>
-			<span>{{ post.date }}</span>
+			<span>{{ speaker.date }}</span>
 			&raquo;
-			{{ post.place }}
+			{{ speaker.place }}
 			&raquo;
-			{% if post.url %}<a href="{{ post.url }}">{% endif %}{{ post.title }}{% if post.url %}</a>{% endif %}
+			{% if speaker.url %}<a href="{{ speaker.url }}">{% endif %}{{ speaker.title }}{% if speaker.url %}</a>{% endif %}
 		</li>
 		{% endfor %}
 	</ul>
