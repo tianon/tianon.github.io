@@ -152,6 +152,14 @@ a:hover   { color: color-mix(in srgb, var(--text-color), var(--background-color)
 	margin-left: 1.35em;
 }
 
+table {
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid color-mix(in srgb, var(--background-color), var(--text-color) 80%);
+	padding: 0.1em 0.3em;
+}
+
 pre {
 	border: 1px solid #ddd;
 	padding: 0 .4em;
