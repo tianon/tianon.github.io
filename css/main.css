@@ -43,8 +43,11 @@ html:has(#color-scheme-dark:checked) { --darkmode: 1; }
 		local('DejaVu Sans Mono'),
 		url('/DejaVuSansMono.ttf') format('truetype');
 }
-body {
+body, code {
 	font-family: DejaVu Sans Mono, sans-serif;
+}
+
+body {
 	font-size: small;
 	text-align: center;
 }
@@ -145,28 +148,26 @@ a:hover   { color: color-mix(in srgb, var(--text-color), var(--background-color)
 	border: 0;
 }
 
-/* posts */
-
-/* standard */
-.post pre {
-	border: 1px solid #ddd;
-	padding: 0 .4em;
-	overflow: auto;
-}
-
 .post ul, .post ol {
 	margin-left: 1.35em;
 }
 
-.post code {
+pre {
+	border: 1px solid #ddd;
+	padding: 0 .4em;
+	overflow: auto;
+}
+code {
 	/* inline code */
 	border: 1px solid color-mix(in srgb, var(--background-color), var(--text-color) 80%);
 	padding: 0 0.2em;
+	color: var(--text-color);
 	background-color: color-mix(in srgb, var(--background-color), var(--text-color) 20%);
 }
-.post pre code {
+pre code {
 	/* code blocks */
 	border: none;
 	padding: 0;
+	color: inherit;
 	background-color: inherit;
 }
