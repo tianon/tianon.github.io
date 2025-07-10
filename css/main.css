@@ -137,7 +137,7 @@ a:hover   { color: color-mix(in srgb, var(--text-color), var(--background-color)
 
 .footer .rss {
 	margin-top: 1.1em;
-	margin-right: -.2em;
+	margin-right: -0.2em;
 	float: right;
 }
 
@@ -161,7 +161,7 @@ a:hover   { color: color-mix(in srgb, var(--text-color), var(--background-color)
 .post code {
 	/* inline code */
 	border: 1px solid color-mix(in srgb, var(--background-color), var(--text-color) 80%);
-	padding: 0 .2em;
+	padding: 0 0.2em;
 	background-color: color-mix(in srgb, var(--background-color), var(--text-color) 20%);
 }
 .post pre code {
