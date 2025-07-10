@@ -40,7 +40,7 @@ So, without further ado, here is the anti-climax: 💫
 | Slot | Object | Description |
 | ---- | ------ | ----------- |
 {% for object in site.data.piv-objects -%}
-| <small style="margin-right: 0.2em">0x</small>`{{ object.slot }}` | <small style="margin-right: 0.2em">0x</small>`{{ object.tag }}` | {{ object.description }} |
+| <small>0x</small>`{{ object.slot }}` | <small>0x</small>`{{ object.tag }}` | {{ object.description }} |
 {% endfor %}
 
 See also ["piv-objects.json"]({% link json/piv-objects.json %}) for a machine-readable copy of this data. 👀🤖💻💾
