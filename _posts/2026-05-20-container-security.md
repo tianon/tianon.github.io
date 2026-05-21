@@ -24,6 +24,16 @@ Beyond that, a short list of things that are easy to enable and hard to justify 
 - `--cap-drop NET_RAW` -- or `--cap-drop ALL` and add back only what you actually need; `CAP_NET_RAW` is almost never legitimately needed by application containers
 - never `--privileged` -- if something seems to require it, the right answer is almost always a more targeted capability grant or bind mount, not the nuclear option
 
+```bash
+docker run \
+  --user 1234:5678 \
+  --security-opt no-new-privileges \
+  --read-only \
+  --tmpfs /tmp \
+  --cap-drop ALL \
+  acme/untrusted-workload:latest
+```
+
 None of these require a daemon restart or infrastructure changes, and stacked together they go a long way toward actually building the boundary that the defaults leave unbuilt.
 
 <small>(this post was written with the assistance of "claude my eyes right out" but all thoughts and understanding are Tianon's)</small>
